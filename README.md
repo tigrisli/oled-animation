@@ -12,11 +12,13 @@ These are the files and steps needed to create an OLED animation using Arduino.
 | SDA      | SDA      |
 | SCL      | SCL      |
 
+
 ### **2. Download gif and split it into frames**
 
 ![alt text](https://github.com/tigrisli/oled-animation/blob/main/heart.gif)
 
 I used https://ezgif.com/split to split my gif into single image frames.
+
 
 ### **3. Convert images to X Bitmap with Processing**
 
@@ -28,10 +30,12 @@ I used https://ezgif.com/split to split my gif into single image frames.
 - Select image file you want to convert
 - The C header file will be exported and saved in the same location as your image file
 
+
 ### **4. Open oled-animated-heart.ino with Arduino**
 
 This code uses the **U8g2 library** for monochrome displays. The library can be installed from the Arduino IDE by going to
 **Sketch > Include Library > Manage Libraries.** Then search for **u8g2 by Oliver** and click Install.
+
 
 ### **5. Create an array of images and store it in the flash**
 
@@ -56,6 +60,7 @@ const static unsigned char heart_bits[7][512] PROGMEM = {
   }
 };
 ```
+
 
 ### **6. Create a function to play images in our desired sequence order**
 
@@ -88,5 +93,6 @@ void drawAnimation(void) {
     }
 }
 ```
+
 
 ### **7. Upload onto Arduino board**
