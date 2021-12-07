@@ -347,7 +347,7 @@ const static unsigned char heart_bits[7][512] PROGMEM = {
 };
 
 void drawAnimation(void) {
-  // graphic commands to redraw the complete screen should be placed here
+  // play images and animatio in our desired sequence order
   static uint8_t frame = 0 ;
 
   switch(frame){
@@ -369,6 +369,7 @@ void drawAnimation(void) {
   }
   frame++;
   
+  // number of frames to play before animation loops itself
     if(frame>15){
       frame = 0;
     }
